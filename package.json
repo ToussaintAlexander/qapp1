@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.8.2",
+    "aws-amplify": "^3.0.18",
+    "aws-amplify-vue": "^2.1.1",
     "npm-check-updates": "^7.0.1",
     "quasar": "^1.12.8",
     "vue": "^2.6.11"

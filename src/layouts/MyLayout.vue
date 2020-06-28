@@ -18,11 +18,13 @@
             rounded
             label="Sign Up"
             class="q-mr-sm"
+            :to="{ path: 'signup' }"
           />
           <q-btn
             outline
             rounded
             label="Sign In"
+            :to="{ path: 'signin' }"
           />
         </div>
 
@@ -111,6 +113,21 @@ export default {
   data () {
     return {
       leftDrawerOpen: false
+    }
+  },
+  methods: {
+    // openURL,
+    onResize (size) {
+      this.report = size
+    },
+    async signOut () {
+      await this.$Auth
+        .signOut()
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+      this.signedIn = false
+      parent.signedIn = false
+      this.$router.push({ name: 'signout' })
     }
   }
 }
